@@ -1,0 +1,11 @@
+{% extends 'crm/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>Delete {{ service.name }}?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a href="{% url 'crm:home' pk=service.serv_number %} ">Cancel</a>
+
+    </form>
+{% endblock %}
